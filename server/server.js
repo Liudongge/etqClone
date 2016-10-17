@@ -17,7 +17,7 @@ app.set('db', massiveInstance);
 app.use(cors());
 
 app.use(bodyParser.json());
-app.use(express.static('../public'));
+// app.use(express.static('../public'));
 
 app.use(session({
   secret: config.sessionSecret
