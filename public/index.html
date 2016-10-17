@@ -1,0 +1,92 @@
+<html ng-app='shoeApp'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Shoe | Personal Project</title>
+  <link href="img/nav/favicon.ico" rel="shortcut icon">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.6/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.6/assets/owl.theme.default.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css">
+  <link rel='stylesheet' href='./dist/all.css'/>
+</head>
+<body ng-controller='mainCtrl'>
+
+  <div class='wrapper-overlay'></div>
+
+  <header class='navbar' ng-cloak>
+    <button type="button" name="button" class='menu-btn'></button>
+    <a ui-sref='collection'><div class='logo'></div></a>
+    <div class='cart-btn'>{{cartqty}}</div>
+  </header>
+
+  <aside class='menu-wrapper'>
+  	<div>
+      <div class='menu'>
+        <nav role="navigation">
+          <ul><h2>Menu</h3></ul>
+          <ul>
+            <li><a ui-sref='collection' class='collection-btn'>Collection</a></li>
+            <li><a>Lookbook</a></li>
+            <li><a>About</a></li>
+            <li><a>Stockists</a></li>
+          </ul>
+          <ul>
+            <li><a>Customer Care</a></li>
+            <li><a>Login</a></li>
+          </ul>
+        </nav>
+      </div>
+      <footer class='menu-footer'>
+        <a href="https://www.facebook.com/" target="_blank">
+          <span><i class="fa fa-facebook"></i></span>
+        </a>
+        <a href="https://www.instagram.com/" target="_blank">
+          <span><i class="fa fa-instagram"></i></span>
+        </a>
+        <a href="https://twitter.com/" target="_blank">
+          <span><i class="fa fa-twitter"></i></span>
+        </a>
+      </footer>
+  	</div>
+  </aside>
+
+  <aside class='cart-wrapper'>
+  	<div>
+      <div class='cart-qty'>{{cartqty}}</div>
+      <div class='cart-scroll'>
+        <ul class='cart-products'>
+          <li ng-repeat='shoe in thebag track by $index' class='removeShoe'>
+            <figure><img ng-src={{shoe.img1}}></figure>
+            <div>
+              <h3>{{shoe.name}}</h3>
+              <p>
+                SIZE: {{shoe.size}}<br>
+                <span class='count'>QTY: {{shoe.quantity}}</span>
+              </p>
+              <h4>${{shoe.price*shoe.quantity}}</h4>
+              <button type="button" name="button" class='cart-removeitem' ng-click='removeFromBag($index)'>X</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <footer class='cart-footer'>TOTAL<span class='total'>${{cartTotal}}.00</span></footer>
+      <button type="button" name="button" class='checkout-btn' ng-click='checkoutButton()' ui-sref='checkout'>CHECKOUT</button>
+    </div>
+  </aside>
+
+  <main class='main-wrapper'>
+      <ui-view class='fade'></ui-view>
+  </main>
+
+  <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.6/owl.carousel.js"></script>
+  <script
+  src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  <script
+  src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+  <script src="https://code.angularjs.org/1.5.8/angular-animate.js"></script>
+  <script type='text/javascript' src='./dist/all.js'></script>
+</body>
+</html>

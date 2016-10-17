@@ -1,0 +1,45 @@
+<div class='shop-wrapper'>
+
+    <div class="shoe-img owl-carousel owl-theme">
+
+      <div class="item"><img ng-src={{shoe.img1}}></div>
+      <div class="item"><img ng-src={{shoe.img2}}></div>
+      <div class="item"><img ng-src={{shoe.img3}}></div>
+
+    </div>
+    <footer class='shoe-footer'>
+      <div class="shoe-name">
+        <h2>{{shoe.name}}</h2>
+      </div>
+      <span class="shoe-price">
+        ${{shoe.price}}
+      </span>
+      <div class="shoe-dscrp">
+        <p>{{shoe.description}}</p>
+      </div>
+    </footer>
+</div>
+<aside class='product-sizes'>
+  <div class="sizes-wrapper">
+    <div class="sizes">
+      <ul>
+        <li>EU | US | UK</li>
+        <li ng-click = "changeSize('EU 36 | US 03 | UK 02')">36 | 03 | 02</li>
+        <li ng-click = "changeSize('EU 37 | US 04 | UK 03')">37 | 04 | 03</li>
+        <li ng-click = "changeSize('EU 38 | US 05 | UK 04')">38 | 05 | 04</li>
+        <li ng-click = "changeSize('EU 39 | US 06 | UK 05')">39 | 06 | 05</li>
+        <li ng-click = "changeSize('EU 40 | US 07 | UK 06')">40 | 07 | 06</li>
+        <li ng-click = "changeSize('EU 41 | US 08 | UK 07')">41 | 08 | 07</li>
+        <li ng-click = "changeSize('EU 42 | US 09 | UK 08')">42 | 09 | 08</li>
+        <li ng-click = "changeSize('EU 43 | US 10 | UK 09')">43 | 10 | 09</li>
+        <li ng-click = "changeSize('EU 44 | US 11 | UK 10')">44 | 11 | 10</li>
+        <li ng-click = "changeSize('EU 45 | US 12 | UK 11')">45 | 12 | 11</li>
+        <li ng-click = "changeSize('EU 46 | US 13 | UK 12')">46 | 13 | 12</li>
+      </ul>
+    </div>
+  </div>
+</aside>
+<footer class='shop-checkout'>
+  <button ng-click='getSizes()' type="button" name="button" class='size-btn'>{{size}}</button>
+  <button ng-click='addtobag(shoe)' ng-style='addtobaglight' type="button" name="button" class='addtobag-btn'>ADD TO BAG</button>
+</footer>

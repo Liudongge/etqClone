@@ -1,0 +1,110 @@
+<header class='checkout-header'>
+  <h1>Checkout</h1>
+</header>
+<form class="billing-form" action="" method="post">
+
+  <div>
+    <h2>BILLING INFORMATION</h2>
+  </div>
+
+  <div>
+    <label>FIRST NAME *</label>
+    <input />
+  </div>
+  <div>
+    <label>LAST NAME *</label>
+    <input />
+  </div>
+  <div>
+    <label>COMPANY</label>
+    <input />
+  </div>
+  <div>
+    <label>EMAIL *</label>
+    <input />
+  </div>
+  <div>
+    <label>ADDRESS LINE 1 *</label>
+    <input />
+  </div>
+  <div>
+    <label>ADDRESS LINE 2</label>
+    <input />
+  </div>
+  <div>
+    <label>CITY *</label>
+    <input />
+  </div>
+  <div>
+    <label>STATE *</label>
+    <input />
+  </div>
+  <div>
+    <label>ZIP *</label>
+    <input />
+  </div>
+  <div>
+    <label>COUNTRY</label>
+    <input />
+  </div>
+  <div>
+    <label>TELEPHONE</label>
+    <input />
+  </div>
+
+  <div>
+    <h2>SHIPPING METHOD</h2>
+  </div>
+  <div class='shipping-mthd'>
+    <label>UPS - FREE SHIPPING</label><span>FREE</span>
+  </div>
+
+  <div>
+    <h2>BILLING METHOD</h2>
+  </div>
+  <div class='billing-mthd'>
+    <div>
+      <label>CREDIT CARD</label><img src='../img/checkout/creditcard.png'>
+    </div>
+    <div>
+      <label>PAYPAL</label><img src='../img/checkout/paypal.png'>
+    </div>
+    <div>
+      <label>BITCOIN</label><img src='../img/checkout/bitcoin.png'>
+    </div>
+  </div>
+
+  <div class='your-order'>
+    <h2>YOUR ORDER</h2>
+  </div>
+  <hr class='checkout-hr'>
+    <div class='checkout-order' ng-repeat='item in thebag'>
+      <figure><img ng-src={{item.img1}}></figure>
+      <div>
+        <p>{{item.name}}</p>
+        <p>SIZE: {{item.size}}</p>
+        <p>QTY: {{item.quantity}}</p>
+      </div>
+      <div>
+        <p>${{item.price*item.quantity}}</p>
+      </div>
+    </div>
+  <hr class='checkout-hr'>
+  <div class='checkout-totals'>
+    <p>SUBTOTAL
+      <span>${{cartTotal}}.00</span>
+    </p>
+    <hr>
+    <p>SHIPPING
+      <span>FREE</span>
+    </p>
+    <hr class='checkout-hr'>
+    <p class='gt'>GRAND TOTAL
+      <span>${{cartTotal}}.00</span>
+    </p>
+    <hr>
+    <div class='checkout-button'>
+      <span>CONTINUE TO PAYMENT</span>
+    </div>
+  </div>
+</form>
