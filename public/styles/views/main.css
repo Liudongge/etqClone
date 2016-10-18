@@ -10,6 +10,16 @@
   visibility: hidden;
 }
 
+body {
+	width: 100%;
+	height: auto;
+	overflow-x: hidden;
+	text-rendering: optimizeLegibility!important;
+	-webkit-font-smoothing: antialiased!important;
+	background: #f3f3f5;
+	left: 0;
+	right: 0;
+}
 /* ////////////////////////////
    //        ANIMATIONS      //
    //////////////////////////// */
@@ -505,7 +515,7 @@
 
 
 .shop-wrapper {
-  width: 100vw;
+  /*width: 100vw;*/
   height: auto;
   min-height: 70vw;
   margin-bottom: 0;
@@ -770,10 +780,10 @@
 	padding-right: .9375rem;
 	float: left;
 	width: 100%;
-	height: 75px;
+	height: 90px;
 	display: flex;
 	text-align: left;
-  margin-bottom: 5px;
+  margin-bottom: 14px;
 }
 
 .checkout-order figure {
@@ -813,7 +823,6 @@
 
 .checkout-order div:nth-child(3) {
 	margin-left: auto;
-	margin-top: 50px;
 }
 
 .checkout-totals {
@@ -861,10 +870,47 @@
 @media (min-width : 992px) {
 	.navbar {
 		height: 60px;
-		padding-top: 6;
+		padding-top: 4;
 	}
 
 	.shop-checkout {
-		height: 75px;
+		float: right;
+		width: 400px;
+		display: flex;
+		right: 0px;
 	}
+
+	.shoe-footer {
+		top: 35%;
+		bottom: auto;
+		position: absolute;
+		left: auto;
+		margin-top: -25px;
+		display: block;
+		width: 288px;
+		z-index: 3;
+		bottom: 100px;
+		right: 92px;
+	}
+
+	.shoe-img {
+		display: block;
+		height: auto;
+		position: relative;
+		width: 65%;
+	}
+
+	.product-sizes {
+		width: 400px;
+	}
+
+	.product-sizes.active {
+		position: fixed;
+	}
+
+	.billing-form {
+		width: 50%;
+		margin: auto;
+	}
+
 }

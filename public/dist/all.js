@@ -300,14 +300,14 @@ angular.module('shoeApp').service('shoeSrv', function ($http) {
   this.getShoes = function () {
     return $http({
       method: 'GET',
-      url: 'http://localhost:9001/api/shoes'
+      url: '/api/shoes'
     });
   };
 
   this.getCart = function () {
     return $http({
       method: 'GET',
-      url: 'http://localhost:9001/api/cart'
+      url: '/api/cart'
     }).then(function (res) {
       // console.log('db',res);
       return res;
@@ -317,7 +317,7 @@ angular.module('shoeApp').service('shoeSrv', function ($http) {
   this.setCart = function (quantity) {
     return $http({
       method: 'POST',
-      url: 'http://localhost:9001/api/cart',
+      url: '/api/cart',
       data: {
         cartqty: quantity
       }
@@ -327,7 +327,7 @@ angular.module('shoeApp').service('shoeSrv', function ($http) {
   this.addOrder = function (shoeid, size) {
     return $http({
       method: 'POST',
-      url: 'http://localhost:9001/api/order',
+      url: '/api/order',
       data: {
         shoeid: shoeid,
         size: size
@@ -338,7 +338,7 @@ angular.module('shoeApp').service('shoeSrv', function ($http) {
   this.removeFromOrder = function (shoeid, size) {
     return $http({
       method: 'POST',
-      url: 'http://localhost:9001/api/remove',
+      url: '/api/remove',
       data: {
         shoeid: shoeid,
         size: size
@@ -349,7 +349,7 @@ angular.module('shoeApp').service('shoeSrv', function ($http) {
   this.getOrders = function () {
     return $http({
       method: 'GET',
-      url: 'http://localhost:9001/api/order'
+      url: '/api/order'
     });
   };
 });

@@ -3,8 +3,8 @@ var cors = require('cors');
 var bodyParser = require('body-parser');
 var massive = require('massive');
 var config = require('./config')
-// var connectionString = 'postgres://postgres:@localhost/etqdb';
-var connectionString = config.connectionString;
+var connectionString = 'postgres://postgres:@localhost/etqdb';
+// var connectionString = config.connectionString;
 var session = require('express-session')
 
 var app = express();
@@ -17,9 +17,11 @@ app.set('db', massiveInstance);
 app.use(cors());
 
 app.use(bodyParser.json());
-// app.use(express.static('../public'));
+app.use(express.static('../public'));
 
 app.use(session({
+  resave: true,
+  saveUninitialized: true,
   secret: config.sessionSecret
 }))
 
@@ -46,6 +48,6 @@ app.get('/api/order', shoeCtrl.getOrders);
 
 
 var port = config.port;
-app.listen(port, function(){
+app.listen(9001, function(){
   console.log('Port ' + port + ' is listening.');
 });
